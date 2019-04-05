@@ -12,47 +12,71 @@ function createCanvas(canvasWidth, canvasHeight){
 
 function createCharacter(width, height, cols, rows, state, frames, currentFrame, imgRunSrc, speed, x, y, srcX, srcY){
 	
-	//cria a imagem que será o objeto do sprite
-	const characterRun = new Image(); 
-	characterRun.src = imgRunSrc;
+	//decorator implementation (doesn't work yet)
+	withImageRun = function(imgSrc) {
+		this.characterRun = new Image()
+		this.characterRun.src = imgSrc
+		return this
+	}
 
-	//tamanho total da imagem do sprite
+	withImageDimensions = function(imgWidth, imgHeight) {
+		this.imgWidth = imgWidth
+		this.imgHeight = imgHeight
+		return this
+	}
+
+	withSpriteDimensions = function(imgWidth, imgHeight, rows, cols){
+		this.spriteWidth = imgWidth/cols
+		this.spriteHeight = imgHeight/rows
+		return this
+	}
+
+	withMoveState = function(moveState){
+		this.moveState = moveState
+		return this
+	}
+
+	withFrame = function(frameCount){
+		this.frameCount = frameCount
+		this.currentFrame = currentFrame
+		return this
+	}
+
+	withCoordinates = function(x, y, srcX, srcY){
+		this.x = x
+		this.y = y
+		this.srcX = srcX
+		this.srcY = srcY
+		return this
+	}
+	
+	withSpeed = function(speed){
+		this.speed = speed
+	}
+
+	const characterRun = new Image()
+	characterRun.src = imgRunSrc
+
 	const imgWidth = width
 	const imgHeight = height
 
-	//quantidade de linhas e colunas do sprite
-	const spriteRows = cols; 
-	const spriteCols = rows; 
+	const spriteWidth = imgWidth/cols
+	const spriteHeight = imgHeight/rows
 
-	const moveState = state //trackLeft = 1 ou trackRight = 0
+	const moveState = state
 
-	//para pegar o tamanho de um unico sprite basta dividir a largura (width) total 
-	//pela quantidade de colunas (cols) e a altura (height) pela quantidade de linhas (rows)
-	const spriteWidth = imgWidth/cols  
-	const spriteHeight = imgHeight/rows 
-
-	//quantidade de frames que o sprite possui
 	const frameCount = frames
-	
-	//posição onde o sprite será renderizado
-	//var x=0;
-	//var y=0; 
-	//posição do canvas para um unico sprite
-	//var srcX=0; 
-	//var srcY=0; 
 
-	//objeto character
 	return {
 		characterRun,
 		imgWidth, 
 		imgHeight, 
-		spriteRows, 
-		spriteCols,
 		moveState, 
 		spriteWidth,
 		spriteHeight,
 		currentFrame,
 		frameCount,
+
 		speed,
 		x,y,srcX,srcY
 	}
