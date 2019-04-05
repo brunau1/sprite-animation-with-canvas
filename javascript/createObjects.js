@@ -10,7 +10,7 @@ function createCanvas(canvasWidth, canvasHeight){
 	return {canvas, context}
 }
 
-function createCharacter(width, height, cols, rows, state, frames, currentFrame, imgSrc, right, left, speed, x, y, srcX, srcY){
+function createCharacter(width, height, cols, rows, state, frames, currentFrame, imgSrc, speed, x, y, srcX, srcY){
 	
 	//cria a imagem que será o objeto do sprite
 	const character = new Image(); 
@@ -25,9 +25,6 @@ function createCharacter(width, height, cols, rows, state, frames, currentFrame,
 	const spriteCols = rows; 
 
 	const moveState = state //trackLeft = 1 ou trackRight = 0
-	const moveDirection = []
-	moveDirection['right'] = right
-	moveDirection['left'] = left
 
 	//para pegar o tamanho de um unico sprite basta dividir a largura (width) total 
 	//pela quantidade de colunas (cols) e a altura (height) pela quantidade de linhas (rows)
@@ -52,7 +49,6 @@ function createCharacter(width, height, cols, rows, state, frames, currentFrame,
 		spriteRows, 
 		spriteCols,
 		moveState, 
-		moveDirection,
 		spriteWidth,
 		spriteHeight,
 		currentFrame,

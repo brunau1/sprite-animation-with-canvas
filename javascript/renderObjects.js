@@ -16,12 +16,16 @@ function run(context, persona){
 		persona.srcX = persona.currentFrame * persona.spriteWidth
 		persona.srcY = persona.spriteHeight * 1
 	}
+	else if(persona.moveState == 0){
+		persona.currentFrame = 0
+		persona.srcX = persona.currentFrame * persona.spriteWidth
+	}
 	context.clearRect(persona.x, persona.y, persona.spriteWidth, persona.spriteHeight)
 }
 
 function draw(context, persona){
-
-	run(context, persona);
+	getInput(persona)
+	run(context, persona)
 	context.drawImage(persona.character, persona.srcX, persona.srcY, persona.spriteWidth, 
 		persona.spriteHeight, persona.x, persona.y, persona.spriteWidth, persona.spriteHeight);
 }
