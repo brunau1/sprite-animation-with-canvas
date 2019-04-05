@@ -1,7 +1,10 @@
 function run(context, persona){
+	context.clearRect(persona.x, persona.y, persona.spriteWidth, persona.spriteHeight)
+	
 	if (persona.moveState == 1) {//right
 		console.log("Frame: ",persona.currentFrame)
 		persona.currentFrame = ++persona.currentFrame % persona.frameCount;
+		persona.x += persona.speed
 		persona.srcX = persona.currentFrame * persona.spriteWidth; 
 		persona.srcY = persona.spriteHeight * 0
 	}
@@ -13,6 +16,7 @@ function run(context, persona){
 		else{
 			persona.currentFrame = 7
 		}
+		persona.x -= persona.speed
 		persona.srcX = persona.currentFrame * persona.spriteWidth
 		persona.srcY = persona.spriteHeight * 1
 	}
@@ -20,7 +24,6 @@ function run(context, persona){
 		persona.currentFrame = 0
 		persona.srcX = persona.currentFrame * persona.spriteWidth
 	}
-	context.clearRect(persona.x, persona.y, persona.spriteWidth, persona.spriteHeight)
 }
 
 function draw(context, persona){
