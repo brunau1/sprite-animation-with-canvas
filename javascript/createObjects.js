@@ -24,7 +24,7 @@ function createCharacter(width, height, cols, rows, state, frames, currentFrame,
 	const spriteRows = cols; 
 	const spriteCols = rows; 
 
-	const moveState = state //trackLeft = 1 ou trakRight = 0
+	const moveState = state //trackLeft = 1 ou trackRight = 0
 	const moveDirection = []
 	moveDirection['right'] = right
 	moveDirection['left'] = left
