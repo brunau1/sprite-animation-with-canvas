@@ -10,11 +10,11 @@ function createCanvas(canvasWidth, canvasHeight){
 	return {canvas, context}
 }
 
-function createCharacter(width, height, cols, rows, state, frames, currentFrame, imgSrc, speed, x, y, srcX, srcY){
+function createCharacter(width, height, cols, rows, state, frames, currentFrame, imgRunSrc, speed, x, y, srcX, srcY){
 	
 	//cria a imagem que será o objeto do sprite
-	const character = new Image(); 
-	character.src = imgSrc;
+	const characterRun = new Image(); 
+	characterRun.src = imgRunSrc;
 
 	//tamanho total da imagem do sprite
 	const imgWidth = width
@@ -43,7 +43,7 @@ function createCharacter(width, height, cols, rows, state, frames, currentFrame,
 
 	//objeto character
 	return {
-		character,
+		characterRun,
 		imgWidth, 
 		imgHeight, 
 		spriteRows, 

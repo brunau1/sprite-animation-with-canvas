@@ -1,6 +1,6 @@
 function run(context, persona){
 	context.clearRect(persona.x, persona.y, persona.spriteWidth, persona.spriteHeight)
-	
+
 	if (persona.moveState == 1) {//right
 		console.log("Frame: ",persona.currentFrame)
 		persona.currentFrame = ++persona.currentFrame % persona.frameCount;
@@ -29,7 +29,7 @@ function run(context, persona){
 function draw(context, persona){
 	getInput(persona)
 	run(context, persona)
-	context.drawImage(persona.character, persona.srcX, persona.srcY, persona.spriteWidth, 
+	context.drawImage(persona.characterRun, persona.srcX, persona.srcY, persona.spriteWidth, 
 		persona.spriteHeight, persona.x, persona.y, persona.spriteWidth, persona.spriteHeight);
 }
 
