@@ -4,9 +4,14 @@ body{
 
 	display: flex;
 	align-items: center;
+
+	background-color: #000028;
 }
 canvas{
 	border: 1px solid red;
 	margin: auto;
-	background-image: url("../images/background/background.png");
+	background-image: url("../images/background/background.gif");
+	background-size: 77.5em;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
