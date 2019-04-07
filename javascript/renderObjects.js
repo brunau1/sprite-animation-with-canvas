@@ -35,6 +35,10 @@ function updateRun(context, persona) {
 		persona.spriteHeight, persona.x, persona.y, persona.spriteWidth, persona.spriteHeight);
 }
 
+/*function updateBackground(context, background) {
+	context.drawImage(background.backImg, 0, 0)
+}*/
+
 function verifyCanvasRanges(persona) {
 	if (persona.x >= canvasWidth - persona.spriteWidth) {
 		persona.x = canvasWidth - persona.spriteWidth
@@ -52,16 +56,17 @@ function verifyCanvasRanges(persona) {
 	}
 }
 
-function render(context, persona) {
+function render(context, persona, background) {
 	console.log("render")
 	updateRun(context, persona)
+	//updateBackground(context, background)
 }
 
-function loop(context, persona) {
+function loop(context, persona, background) {
 	if (endGame === false) {
 		setInterval(function () {
 			getInput(persona)
-			render(context, persona)
+			render(context, persona, background)
 		}, UpdateFrequency)
 	}
 	else {

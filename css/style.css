@@ -8,4 +8,5 @@ body{
 canvas{
 	border: 1px solid red;
 	margin: auto;
+	background-image: url("../images/background/background.png");
 }

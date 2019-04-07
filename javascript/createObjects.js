@@ -53,7 +53,7 @@ function createBackground(){
 	return{
 		withImg: function( imgSrc ){
 			this.backImg = new Image()
-			backImg.src = imgSrc
+			this.backImg.src = imgSrc
 			return this
 		}
 	}
