@@ -19,13 +19,9 @@ loop(canvas.context, personas[0])
  *  Game structure
  */
 
-initializeGameComponents()
+initializeGameComponents(canvas, personas)
 
-setTimeout( () => {
-    loopGame()
-}, 100 )
-
-function initializeGameComponents(){
+function initializeGameComponents(canvas, personas){
     
 }
 
