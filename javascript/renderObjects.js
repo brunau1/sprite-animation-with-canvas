@@ -31,6 +31,8 @@ function updateRun(context, persona) {
 		//persona.currentFrame = 0
 		persona.srcX = persona.currentFrame * persona.spriteWidth
 	}
+	context.drawImage(persona.characterRun, persona.srcX, persona.srcY, persona.spriteWidth,
+		persona.spriteHeight, persona.x, persona.y, persona.spriteWidth, persona.spriteHeight);
 }
 
 function verifyCanvasRanges(persona) {
@@ -53,8 +55,6 @@ function verifyCanvasRanges(persona) {
 function render(context, persona) {
 	console.log("render")
 	updateRun(context, persona)
-	context.drawImage(persona.characterRun, persona.srcX, persona.srcY, persona.spriteWidth,
-		persona.spriteHeight, persona.x, persona.y, persona.spriteWidth, persona.spriteHeight);
 }
 
 function loop(context, persona) {
