@@ -24,7 +24,7 @@ function updateRun(context, persona) {
 		persona.x -= persona.speed
 		verifyCanvasRanges(persona)
 		console.log("X: " + persona.x)
-		persona.srcX = persona.currentFrame * persona.spriteWidth
+		persona.srcX = persona.currentFrame * persona.spriteWidth	
 		persona.srcY = persona.spriteHeight * 1
 	}
 	else if (persona.moveState == 0) {//stopped
@@ -52,18 +52,19 @@ function verifyCanvasRanges(persona) {
 	}
 }
 
-function render(context, persona1, persona2) {
-	console.log("render")
-	updateRun(context, persona1)
-	updateRun(context, persona2)
+function render(context, persona) {
+	updateRun(context, persona)
 }
 
 function loop(context, persona1, persona2) {
 	if (endGame === false) {
 		setInterval(function () {
-			getInput(persona1)
-			getInput(persona2)
-			render(context, persona1, persona2)
+
+			if(getInput(persona1))
+			render(context, persona1)
+
+			if(getInput(persona2))
+			render(context, persona2)
 		}, UpdateFrequency)
 	}
 	else {

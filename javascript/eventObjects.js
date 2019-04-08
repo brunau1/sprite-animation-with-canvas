@@ -16,6 +16,7 @@ function getInput(persona) {
 
 			persona.moveState = 0
 		})
+		return true
 	}
 
 	if (persona.id == 2) {
@@ -35,5 +36,6 @@ function getInput(persona) {
 
 			persona.moveState = 0
 		})
+		return true
 	}
 }
