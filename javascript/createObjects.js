@@ -46,9 +46,14 @@ function createCharacter(){
 		withSpeed: function( speed ) {
 			this.speed = speed
 			return this
+		},
+		withId: function( id ){
+			this.id = id
+			return this
 		}
 	}
 }
+
 function createBackground(){
 	return{
 		withImg: function( imgSrc ){
